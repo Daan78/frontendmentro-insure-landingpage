@@ -385,35 +385,6 @@ a.btn--main:hover {
   text-align: center;
 }
 
-.header__bottom--background::before {
-  content: url("../images/bg-pattern-intro-left-mobile.svg");
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.header__bottom--background::after {
-  content: url("../images/bg-pattern-intro-right-mobile.svg");
-  position: absolute;
-  right: 0;
-  bottom: -180px;
-  z-index: 4;
-}
-
-@media (min-width: 900px) {
-  .header__bottom--background::before {
-    content: url("../images/bg-pattern-intro-left-desktop.svg");
-    top: auto;
-    bottom: -336px;
-  }
-  .header__bottom--background::after {
-    content: url("../images/bg-pattern-intro-right-desktop.svg");
-    bottom: auto;
-    top: -80px;
-    z-index: 3;
-  }
-}
-
 .header__bottom--site-description {
   position: relative;
   background-color: #2d2640;
@@ -520,11 +491,63 @@ a.btn--main:hover {
   display: none;
 }
 
+.visible--left-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.visible--left-header .mobile {
+  display: block;
+}
+
+.visible--left-header .desktop {
+  display: none;
+}
+
+.visible--right-header {
+  position: absolute;
+  right: 0;
+  bottom: -180px;
+  z-index: 4;
+}
+
+.visible--right-header .mobile {
+  display: block;
+}
+
+.visible--right-header .desktop {
+  display: none;
+}
+
 @media (min-width: 900px) {
   .visible--mobile-about, .visible--mobile-footer {
     display: none;
   }
   .visible--desktop-about, .visible--desktop-footer {
+    display: block;
+  }
+  .visible--left-header {
+    position: absolute;
+    top: auto;
+    bottom: -336px;
+  }
+  .visible--left-header .mobile {
+    display: none;
+  }
+  .visible--left-header .desktop {
+    display: block;
+  }
+  .visible--right-header {
+    position: absolute;
+    top: -80px;
+    bottom: auto;
+    z-index: 4;
+  }
+  .visible--right-header .mobile {
+    display: none;
+  }
+  .visible--right-header .desktop {
     display: block;
   }
 }

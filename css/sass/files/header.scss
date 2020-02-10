@@ -159,34 +159,34 @@
             color: white;
             text-align: center;
             &--background {
-                  &::before {
-                        content: url("../images/bg-pattern-intro-left-mobile.svg");
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                  }
-                  &::after {
-                        content: url("../images/bg-pattern-intro-right-mobile.svg");
-                        position: absolute;
-                        right: 0;
-                        bottom: -180px;
-                        z-index: 4;
-                  }
-                  @include for-size( tablet-landscape-up ) {
-                        &::before {
-                              // content: url("../images/bg-pattern-intro-right-desktop.svg");
-                              content: url("../images/bg-pattern-intro-left-desktop.svg");
-                              top: auto;
-                              bottom: -336px;
-                        }
-                        &::after {
-                              // content: url("../images/bg-pattern-intro-right-desktop.svg");
-                              content: url("../images/bg-pattern-intro-right-desktop.svg");
-                              bottom: auto;
-                              top: -80px;
-                              z-index: 3;
-                        }
-                  }
+                  // &::before {
+                  //       content: url("../images/bg-pattern-intro-left-mobile.svg");
+                  //       position: absolute;
+                  //       top: 0;
+                  //       left: 0;
+                  // }
+                  // &::after {
+                  //       content: url("../images/bg-pattern-intro-right-mobile.svg");
+                  //       position: absolute;
+                  //       right: 0;
+                  //       bottom: -180px;
+                  //       z-index: 4;
+                  // }
+                  // @include for-size( tablet-landscape-up ) {
+                  //       &::before {
+                  //             // content: url("../images/bg-pattern-intro-right-desktop.svg");
+                  //             content: url("../images/bg-pattern-intro-left-desktop.svg");
+                  //             top: auto;
+                  //             bottom: -336px;
+                  //       }
+                  //       &::after {
+                  //             // content: url("../images/bg-pattern-intro-right-desktop.svg");
+                  //             content: url("../images/bg-pattern-intro-right-desktop.svg");
+                  //             bottom: auto;
+                  //             top: -80px;
+                  //             z-index: 3;
+                  //       }
+                  // }
             }
             &--site-description {
                   position: relative;
@@ -271,12 +271,58 @@
       &--desktop-about, &--desktop-footer {
             display: none;
       }
+      &--left-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            .mobile {
+                  display: block;
+            }
+            .desktop {
+                  display: none;
+            }
+      }
+      &--right-header {
+            position: absolute;
+            right: 0;
+            bottom: -180px;
+            z-index: 4;
+            .mobile {
+                  display: block;
+            }
+            .desktop {
+                  display: none;
+            }
+      }
       @include for-size( tablet-landscape-up ) {
             &--mobile-about, &--mobile-footer {
                   display: none;
             }
             &--desktop-about, &--desktop-footer {
                   display: block;
+            }
+            &--left-header {
+                  position: absolute;
+                  top: auto;
+                  bottom: -336px;
+                  .mobile {
+                        display: none;
+                  }
+                  .desktop {
+                        display: block;
+                  }
+            }
+            &--right-header {
+                  position: absolute;
+                  top: -80px;
+                  bottom: auto;
+                  z-index: 4;
+                  .mobile {
+                        display: none;
+                  }
+                  .desktop {
+                        display: block;
+                  }
             }
       }
       @include for-size( tablet-portrait-up ) {
