@@ -246,7 +246,7 @@ a.btn--main:hover {
   background: #2b272f;
   z-index: 5;
   overflow: hidden;
-  height: calc(100vh - 76px);
+  height: calc(100vh - 77px);
 }
 
 .header__nav--background {
