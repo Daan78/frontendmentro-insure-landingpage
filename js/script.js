@@ -1,9 +1,3 @@
-// Dropdown toggle
-      // Toggle scroll block on body or html
-            // Min height screen when dropdown is open
-
-// Toggle class .active on active menu selection
-
 class Menu {
 
       // Constructor
@@ -17,7 +11,7 @@ class Menu {
 
       // Events
       events() {
-            // this.hamburgerButtonOpen.forEach( button => button.addEventListener( 'click', this.hamburgerOpenMenu.bind( this ) ) );
+            
             this.hamburgerButtonOpen.onclick = this.hamburgerOpenMenu.bind( this );
             this.hamburgerButtonCLose.onclick = this.hamburgerCloseMenu.bind( this );
       }
