@@ -1,0 +1,290 @@
+.header {
+      &__top {
+            z-index: 9;
+            display: block;
+            position: relative;
+            background: white;
+            .logo {
+                  // float: left;
+                  padding: 30px 0;
+                  a {
+                        position: relative;
+                        display: block;
+                        height: 17px;
+                  }
+                  img {
+                        position: relative;
+                        height: inherit;
+                  }
+            }
+            .hamburger {
+                  position: relative;
+                  padding: 20px 0;
+                  // float: right;
+                  img {
+                        position: relative;
+                        top: 3px;
+                        height: 30px;
+                        cursor: pointer;
+                  }
+                  &--open {
+                        display: none;
+                        &.active {
+                              display: block;
+                        }
+                  }
+                  &--close {
+                        display: none;
+                        &.active {
+                              display: block;                              
+                        }
+                  }
+                  @include for-size( tablet-landscape-up ) {
+                        display: none;
+                  }
+            }
+      }
+      &__nav {
+            display: none;
+            position: absolute;
+            top: 0;
+            top: 77px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $very-dark-violet;
+            z-index: 5;
+            overflow: hidden;
+            height: calc(100vh - 76px);
+            &--background {
+                  position: absolute;
+                  display: none;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  svg {
+                        width: 100%;
+                        height: 100%;
+                  }
+            }
+            &.open {
+                  display: block;
+                  .header__nav--background {
+                        display: block;
+                        @include for-size( tablet-landscape-up ) {
+                              display: none;
+                        }    
+                  }
+            }
+            nav {
+                  position: relative;
+                  top: 30px;
+                  li {
+                        padding-bottom: 10px;
+                  }
+                  a {
+                        display: block;
+                        color: $very-light-gray;
+                        text-decoration: none;
+                        font-size: 20px;
+                        font-family: $font-family-main;
+                        text-align: center;
+                        font-weight: 700;
+                        letter-spacing: 2px;
+                        width: 85%;
+                        margin: 0 auto;
+                        border: 2px solid hsla(0, 0%, 98%, 0);
+                        padding: 17px 0 14px;
+                        max-width: 400px;
+                        &.special {
+                              transition: all .2s ease;
+                              border: 2px solid hsl(0, 0%, 98%);
+                        }
+                  }
+            }
+            @include for-size( tablet-landscape-up ) {
+                  display: block;
+                  background: none;
+                  top: unset;
+                  right: unset;
+                  bottom: unset;
+                  left: unset;
+                  position: relative;
+                  height: auto;
+                  .flex-header {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                  }
+                  nav {
+                        top: 50%;
+                        transform: translateY(-50%);
+                        li {
+                              padding-bottom: 0;
+                              display: inline-block;
+                              margin-left: 17px;
+                              a {
+                                    display: block;
+                                    width: 100%;
+                                    font-size: 14px;
+                                    color: $dark-violet;
+                                    letter-spacing: 1px;
+                                    padding: 0;
+                                    opacity: .7;
+                                    border: none;
+                                    &:hover, &.active {
+                                          opacity: 1;
+                                    }
+                                    &.special {
+                                          padding: 11px 25px 10px;
+                                          border: 1px solid $dark-violet;
+                                          opacity: 1;
+                                          &:hover {
+                                                color: $very-light-gray;
+                                                background-color: $dark-violet;
+                                          }
+                                    }
+                              }
+                        }
+                  }
+            }
+      }
+      .wrapper.flex-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+      }
+      &__bottom {
+            position: relative;
+            color: white;
+            text-align: center;
+            &--background {
+                  &::before {
+                        content: url("../images/bg-pattern-intro-left-mobile.svg");
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                  }
+                  &::after {
+                        content: url("../images/bg-pattern-intro-right-mobile.svg");
+                        position: absolute;
+                        right: 0;
+                        bottom: -180px;
+                        z-index: 4;
+                  }
+                  @include for-size( tablet-landscape-up ) {
+                        &::before {
+                              // content: url("../images/bg-pattern-intro-right-desktop.svg");
+                              content: url("../images/bg-pattern-intro-left-desktop.svg");
+                              top: auto;
+                              bottom: -336px;
+                        }
+                        &::after {
+                              // content: url("../images/bg-pattern-intro-right-desktop.svg");
+                              content: url("../images/bg-pattern-intro-right-desktop.svg");
+                              bottom: auto;
+                              top: -80px;
+                              z-index: 3;
+                        }
+                  }
+            }
+            &--site-description {
+                  position: relative;
+                  background-color: $dark-violet;
+                  padding: 90px 0;
+                  @include for-size( tablet-portrait-up ) {
+                        padding: 100px 0;
+                  }
+            }
+            &--image {
+                  position: relative;
+                  max-width: 100%;
+                  display: block;
+                  z-index: 2;
+                  width: 100%;
+                  .visible--desktop {
+                        position: relative;
+                  }
+            }
+            &--textblock {
+                  position: relative;
+                  display: block;
+                  h1 {
+                        position: relative;
+                        font-family: $font-family-headings;
+                        font-size: 46px;
+                        padding-bottom: 20px;
+                        position: relative;
+                        line-height: 49px;
+                        @include for-size( tablet-portrait-up ) {
+                              font-size: 50px;
+                              line-height: 46px;
+                        }
+                        @include for-size( tablet-landscape-up ) {
+                              font-size: 64px;
+                              line-height: 58px;
+                        }
+                        @include for-size( desktop-up ) {
+                              font-size: 72px;
+                              line-height: 66px;
+                        }
+                  }
+            }
+            @include for-size( tablet-landscape-up ) {
+                  margin-bottom: 100px;
+            }
+            @include for-size( desktop-up ) {
+                  margin-bottom: 175px;
+            }
+      }
+      // clear: both;
+}
+.textblock {
+      @include for-size( tablet-portrait-up ) {
+            width: 50%;
+            &--left {
+                  text-align: left;
+                  padding-right: 5px;
+                  a {
+                        margin: 30px auto 30px 0;
+                  }
+            }
+            &--right {
+                  position: absolute;
+                  top: 0;
+                  right: 20px;
+                  width: 47.5%;
+            }
+      }
+}
+.visible {
+      &--mobile {
+            display: block;
+      }
+      &--desktop {
+            display: none;
+            // position: relative;
+      }
+      &--mobile-about, &--mobile-footer {
+            display: block;
+      }
+      &--desktop-about, &--desktop-footer {
+            display: none;
+      }
+      @include for-size( tablet-landscape-up ) {
+            &--mobile-about, &--mobile-footer {
+                  display: none;
+            }
+            &--desktop-about, &--desktop-footer {
+                  display: block;
+            }
+      }
+      @include for-size( tablet-portrait-up ) {
+            &--mobile {
+                  display: none;
+            }
+            &--desktop {
+                  display: block;
+            }
+      }
+}

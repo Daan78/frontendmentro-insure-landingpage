@@ -1,0 +1,108 @@
+.pro {
+      text-align: center;
+      padding: 130px 0px;
+      &__card {
+            padding: 30px 0;
+            max-width: 325px;
+            margin: 0 auto;
+            &:last-child {
+                  padding-bottom: 0;
+            }
+            img {
+                  width: 90px;
+                  margin-top: 5px;
+            }
+            h3 {
+                  color: $dark-violet;
+                  font-size: 26px;
+                  padding: 30px 0 20px;
+            }
+            p {
+                  color: $grayish-blue;;
+            }
+            @include for-size( tablet-landscape-up ) {
+                  max-width: 350px;
+                  margin: 0;
+                  text-align: left;
+                  &:nth-child( 2 ) {
+                        margin: 0 15px;
+                  }
+            }
+      }
+      @include for-size( tablet-landscape-up ) {
+            .flex {
+                  flex-direction: row;
+                  justify-content: space-between;
+            }
+            h2 {
+                  padding: 65px 0 60px;
+                  font-size: 68px;
+                  text-align: left;
+            }
+      }
+}
+.flex {
+      display: flex;
+      flex-direction: column;
+}
+.about {
+      position: relative;
+      width: 100%;
+      padding-top: 70px;
+      padding-bottom: 70px;
+      text-align: center;
+      background-color: $dark-violet;
+      margin: 0 auto;
+      overflow: hidden;
+      h2 {
+            font-size: 40px;
+      }
+      &__background {
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            @include for-size( tablet-portrait-up ) {
+                  bottom: 0;
+                  svg {
+                        height: 100%;
+                  }
+            }
+      }
+      &__textblock {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            z-index: 3;
+            padding: 0 30px;
+            a {
+                  margin-top: 45px;
+                  text-transform: uppercase;
+            }
+            @include for-size( tablet-landscape-up ) {
+                  flex-direction: row;
+                  flex-wrap: wrap;
+                  justify-content: space-between;
+                  padding: 0 75px;
+                  h2 {
+                        width: 50%;
+                        font-size: 54px;
+                        text-align: left;
+                  }
+                  a {
+                        margin: 0;
+                        top: 50%;
+                        position: relative;
+                        transform: translateY(-50%);
+                  }
+                  div {
+                        top: 5px;
+                        position: relative;
+                  }
+            }
+      }
+}
+main {
+      padding-bottom: 140px;
+}

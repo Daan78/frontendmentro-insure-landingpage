@@ -1,0 +1,67 @@
+body {
+      font-family: $font-family-main;
+}
+.hr {
+      background-color: $dark-violet;
+      opacity: .2;
+      display: block;
+      position: relative;
+      height: 1px;
+      margin: 0 auto;
+      &--header {
+            background-color: $very-light-gray;
+            width: 150px;
+            margin: 0 0 45px;
+            opacity: 1;
+            display: none;
+            @include for-size( tablet-portrait-up ) {
+                  display: block;
+                  margin: 0 0 70px;
+            }
+      }
+      &--content {
+            width: 150px;
+            opacity: .5;
+            @include for-size( tablet-landscape-up ) {
+                  margin: 0;
+            }
+      }
+      &--footer {
+            width: 100%;
+            margin-bottom: 3px;
+      }
+}
+h1, h2, h3 {
+      font-family: $font-family-headings;
+}
+h2 {
+      font-size: 46px;
+      &.dark {
+            color: $very-dark-violet;
+            padding: 40px 0 45px;
+      }
+      &.light {
+            color: $very-light-gray;
+      }
+}
+p {
+      position: relative;
+      font-family: $font-family-main;
+      font-size: 16px;
+      line-height: 26px;
+}
+a {
+      text-decoration: none;
+      cursor: pointer;
+      font-family: $font-family-main;
+}
+.wrapper {
+      position: relative;
+      max-width: 1140px;
+      width: 100%;
+      padding: 0 20px;
+      margin: 0 auto;
+}
+.body-no-scroll {
+      overflow: hidden;
+}

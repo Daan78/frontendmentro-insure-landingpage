@@ -1,0 +1,21 @@
+a {
+      font-family: $font-family-main;
+      text-decoration: none;
+      &.btn {
+            color: $very-light-gray;
+            padding: 12px 30px 11px;
+            &--main {
+                  border: 1px solid $very-light-gray;
+                  display: block;
+                  width: fit-content;
+                  margin: 30px auto 0;
+                  font-weight: 700;
+                  transition: all .2s ease;
+                  color: $very-light-gray;
+                  &:hover {
+                        color: $dark-violet;
+                        background-color: $very-light-gray;
+                  }
+            }
+      }
+}
